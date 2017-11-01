@@ -1,0 +1,13 @@
+* {
+  font-family: "Lato", sans-serif; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+section {
+  max-width: 60em; }
+
+/*# sourceMappingURL=styles.css.map */
