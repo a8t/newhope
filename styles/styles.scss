@@ -1,0 +1,98 @@
+$primary-color: #fecf30;
+$primary-dark: #c79e00;
+$secondary-color: #2966A5;
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: calc(100vh - 80px);
+  scroll-behavior: smooth;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+header {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../imgs/pinkbike.jpg');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 80px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+
+  #summary {
+    max-width: 50em;
+    margin-top: auto;
+    padding: 50px;
+  }
+  
+}
+
+nav {
+  border-radius: 2px;
+  background: $primary-color;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family: 'Abel';
+  position: relative;
+  z-index: 3; 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+
+  a {
+    color: black;
+    text-decoration-skip: ink;
+    margin: 20px;
+
+    &:hover {
+      color: $secondary-color;
+    }
+
+  }
+}
+
+.nav-scrolled {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+
+
+main {
+  margin-top:0;
+  background: #EEE;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+
+  a {
+    color: $secondary-color
+  }
+
+  > section {
+    max-width: 60em;
+    border-radius: 2px;
+    background: #FFF;
+    padding: 50px;
+    margin: 10px;
+
+    p, li { color: #555; }
+  }
+}
+
+
+.main-scrolled {
+  padding-top: 90px;
+}
