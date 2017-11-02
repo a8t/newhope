@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const checkIfDone = setInterval(function() {
-      if (element.getBoundingClientRect().top === 0) {
+      if (Math.floor(element.getBoundingClientRect().top) === 0) {
         element.tabIndex = "-1";
         element.focus()
         clearInterval(checkIfDone)
