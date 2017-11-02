@@ -1,8 +1,10 @@
+html {
+  scroll-behavior: smooth; }
+
 body {
   margin: 0;
   padding: 0;
   padding-top: calc(100vh - 80px);
-  scroll-behavior: smooth;
   font-family: 'Lato', sans-serif; }
 
 header {
@@ -47,6 +49,10 @@ nav {
   position: fixed;
   top: 0; }
 
+.disabledAnchor {
+  pointer-events: none;
+  cursor: default; }
+
 main {
   margin-top: 0;
   background: #EEE;
@@ -55,17 +61,24 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 10px; }
+  padding-top: 10px;
+  padding-bottom: 50px; }
   main a {
     color: #2966A5; }
   main > section {
-    max-width: 60em;
+    max-width: 50em;
     border-radius: 2px;
     background: #FFF;
-    padding: 50px;
+    padding: 50px 90px;
     margin: 10px; }
     main > section p, main > section li {
       color: #555; }
+
+#about-us, #repair-diy, #contact {
+  position: relative;
+  top: -90px; }
+  #about-us:focus, #repair-diy:focus, #contact:focus {
+    top: 0; }
 
 .main-scrolled {
   padding-top: 90px; }
