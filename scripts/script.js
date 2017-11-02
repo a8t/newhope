@@ -4,13 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('header')
   const linksToAnchors = document.querySelectorAll('a[href^="#"]')
   
-  
-  const navbarStick = () => {
-    if (navbar.getBoundingClientRect().top <= 0) {
+  const distanceToTop = el => Math.floor(el.getBoundingClientRect().top)
+
+  function navbarStick() {
+    if (distanceToTop(navbar) <= 0) {
       navbar.classList.add("nav-scrolled");
       main.classList.add('main-scrolled')
     }
-    if (navbar.getBoundingClientRect().top <= 90 && main.getBoundingClientRect().top > 0) {
+    if (distanceToTop(main) >= 0) {
       navbar.classList.remove("nav-scrolled"); 
       main.classList.remove('main-scrolled');
     }
@@ -20,20 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function anchorLinkHandler(e) {
     e.preventDefault()
-    const targetID = this.href.slice(this.href.indexOf("#"))
-    const element = document.querySelector(targetID)
-    const originalTop = element.getBoundingClientRect().top
+    const targetID     = this.href.slice(this.href.indexOf("#"))
+    const targetAnchor = document.querySelector(targetID)
+    const originalTop  = distanceToTop(targetAnchor)
     
     window.scrollBy({
-      top: originalTop, // amount to scroll by. could be negative
+      top: originalTop,
       left: 0,
       behavior: 'smooth'
     })
 
     const checkIfDone = setInterval(function() {
-      if (Math.floor(element.getBoundingClientRect().top) === 0) {
-        element.tabIndex = "-1";
-        element.focus()
+      if (distanceToTop(targetAnchor) === 0) {
+        targetAnchor.tabIndex = "-1";
+        targetAnchor.focus()
         clearInterval(checkIfDone)
       }
     }, 100);

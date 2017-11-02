@@ -15,14 +15,33 @@ header {
   background-image: url("../imgs/pinkbike.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: calc(100vh - 80px);
   width: 100%;
   position: fixed;
   top: 0; }
+  header svg {
+    display: none; }
   header #summary {
-    max-width: 50em;
+    margin: 20px;
     margin-top: auto;
-    padding: 50px; }
+    max-width: 50em;
+    position: relative;
+    color: black;
+    background: inherit; }
+    header #summary #summary-content {
+      position: relative;
+      background: rgba(254, 207, 48, 0.5);
+      border-radius: 5px;
+      padding: 30px; }
+    header #summary #floater {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: inherit;
+      filter: url(#blur); }
 
 nav {
   border-radius: 2px;
@@ -32,7 +51,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 24px;
   font-family: 'Abel';
   position: relative;
   z-index: 3;
