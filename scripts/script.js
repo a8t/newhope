@@ -21,20 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function anchorLinkHandler(e) {
     e.preventDefault()
-    const targetID     = this.href.slice(this.href.indexOf("#"))
+    const targetID     = this.getAttribute("href")
     const targetAnchor = document.querySelector(targetID)
+    if (!targetAnchor) return
     const originalTop  = distanceToTop(targetAnchor)
     
-    window.scrollBy({
-      top: originalTop,
-      left: 0,
-      behavior: 'smooth'
-    })
-
+    window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' })
+    
     const checkIfDone = setInterval(function() {
-      if (distanceToTop(targetAnchor) === 0) {
+      const atBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2
+      if (distanceToTop(targetAnchor) === 0 || atBottom) {
         targetAnchor.tabIndex = "-1";
         targetAnchor.focus()
+        window.history.pushState("", "", targetID)
         clearInterval(checkIfDone)
       }
     }, 100);
