@@ -1,0 +1,145 @@
+$primary-color: #fecf30;
+$primary-dark: #c79e00;
+$secondary-color: #2966A5;
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: calc(100vh - 80px);
+  font-family: 'Lato', sans-serif;
+  
+}
+
+header {
+  margin: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../imgs/pinkbike.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  svg {
+    display: none;
+  }
+  #summary {
+    margin: 20px;
+    margin-top: auto;
+    max-width: 50em;
+    position: relative; 
+    color: black;
+    background: inherit;
+    
+    #summary-content{
+      position: relative;
+      background: rgba(254, 207, 48,0.5);
+      border-radius: 5px;
+      padding: 30px;
+      z-index: 2
+    }
+
+    #floater {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: inherit;
+      filter: url(#blur);
+    } 
+  }
+}
+
+#logo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: auto; 
+  height: 300px;
+  transform: height 0.2s ease-out, left 0.2s ease-out;
+  &.logo-scrolled {
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    height: 100px;
+  }
+}
+
+nav {
+  border-radius: 2px;
+  background: $primary-color;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: 'Abel';
+  position: relative;
+  z-index: 3; 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+
+  a {
+    color: black;
+    text-decoration-skip: ink;
+    margin: 20px;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &.nav-scrolled {
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+}
+
+main {
+  z-index: 2;
+  margin-top:0;
+  background: #EEE;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 50px;
+
+  a {
+    color: $secondary-color
+  }
+
+  > section {
+    max-width: 50em;
+    border-radius: 2px;
+    background: #FFF;
+    padding: 50px 90px;
+    margin: 10px;
+
+    p, li { color: #555; }
+  }
+}
+
+#about-us, #repair-diy, #contact {
+  position: relative;
+  top: -90px;
+  &:focus {
+    top: 0;
+  }
+}
+.main-scrolled {
+  padding-top: 90px;
+}
