@@ -30,6 +30,7 @@ header {
     color: black;
     background: inherit; }
     header #summary #summary-content {
+      position: relative;
       background: rgba(254, 207, 48, 0.5);
       border-radius: 5px;
       padding: 30px;
