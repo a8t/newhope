@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('nav')
   const main = document.querySelector('main')
   const header = document.querySelector('header')
-  const logo = document.querySelector('#logo')
+  // const logo = document.querySelector('#logo')
   const linksToAnchors = document.querySelectorAll('a[href^="#"]')
   const distanceToTop = el => Math.floor(el.getBoundingClientRect().top)
   
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function navbarStick() {
     if (distanceToTop(navbar) <= 320) {
-      logo.classList.add('logo-scrolled')
+      // logo.classList.add('logo-scrolled')
     }
     if (distanceToTop(main) > 320) {
-      logo.classList.remove('logo-scrolled')
+      // logo.classList.remove('logo-scrolled')
     }
 
     if (distanceToTop(navbar) <= 0) {
